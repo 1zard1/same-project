@@ -22,8 +22,7 @@ func Handler(c echo.Context) error {
 	d := time.Date(2024, time.November, 30, 0, 0, 0, 0, time.UTC)
 	dur := time.Until(d)
 	s := fmt.Sprintf("Time until 30's November: %d", int64(dur.Hours())/24)
-	fmt.Println(s)
-	err := c.String(http.StatusOK, "test")
+	err := c.String(http.StatusOK, s)
 	if err != nil {
 		return err
 	}
