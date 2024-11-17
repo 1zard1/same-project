@@ -10,12 +10,11 @@ import (
 func main() {
 	s := echo.New()
 	s.GET("/status", Handler)
-	err := s.Start(":8080")]
+	err := s.Start(":8080")
 	if err != nil {
 		log.Fatal(err)
 	}
 }
-
 
 func Handler(c echo.Context) error {
 	err := c.String(http.StatusOK, "test")
