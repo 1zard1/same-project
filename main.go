@@ -11,7 +11,7 @@ import (
 
 func main() {
 	s := echo.New()
-	s.Use()
+	s.Use(MiddleWare)
 	s.GET("/status", Handler)
 	err := s.Start(":8080")
 	if err != nil {
